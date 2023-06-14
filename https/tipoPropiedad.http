@@ -1,0 +1,26 @@
+### Crear un tipo de propiedad ###
+POST http://localhost:9000/api/tipoPropiedades/tipoPropiedad
+Content-Type: application/json
+
+{
+  "nombre": "APARTAMENTO",
+  "estado": true
+}
+
+### Obtener todos los tipos de propiedad ###
+GET http://localhost:9000/api/tipoPropiedades/tipoPropiedad
+
+### Obtener un tipo de propiedad por su ID ###
+GET http://localhost:9000/api/tipoPropiedades/tipoPropiedad/644cb8b4fda6ec6dcae29ffd
+
+### Actualizar un tipo de propiedad existente ###
+PUT http://localhost:9000/api/tipoPropiedades/tipoPropiedad/644cb8b4fda6ec6dcae29ffd
+Content-Type: application/json
+
+{
+  "nombre": "Apartamento",
+  "estado": true
+}
+
+### Eliminar un tipo de propiedad por su ID ###
+DELETE http://localhost:9000/api/tipoPropiedades/tipoPropiedad/644cb8b4fda6ec6dcae29ffd

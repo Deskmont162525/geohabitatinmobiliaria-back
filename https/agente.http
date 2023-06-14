@@ -1,0 +1,35 @@
+### Para crear un nuevo agente
+POST http://localhost:9000/api/agentes/agente
+Content-Type: application/json
+
+{
+  "id_usuario": "644cb8b4fda6ec6dcae29ffd",
+  "descripcion": "Agente de bienes raíces con experiencia en el mercado",
+  "imagen": "https://example.com/imagen.jpg"
+}
+
+### codigo para cargar imagen /info-images/:id_usuario
+GET http://localhost:9000/api/agentes/agente/info-images/656532324u
+Content-Type: application/json
+
+
+
+
+### Para obtener todos los agentes
+GET http://localhost:9000/api/agentes/agente
+
+### Para obtener un solo agente por su ID
+GET http://localhost:9000/api/agentes/agente/644cb8b4fda6ec6dcae29ffd
+
+### Para actualizar un agente existente
+PUT http://localhost:9000/api/agentes/agente/644cb8b4fda6ec6dcae29ffd
+Content-Type: application/json
+
+{
+  "id_usuario": "644cb8b4fda6ec6dcae29ffd",
+  "descripcion": "Agente de bienes raíces con experiencia en ventas",
+  "imagen": "https://example.com/nueva-imagen.jpg"
+}
+
+### Para eliminar un agente por su ID
+DELETE http://localhost:9000/api/agentes/agente/644cb8b4fda6ec6dcae29ffd

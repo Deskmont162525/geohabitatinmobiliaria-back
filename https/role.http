@@ -1,0 +1,29 @@
+###
+POST http://localhost:9000/api/roles/role
+Content-Type: application/json
+
+{
+  "name": "admin",
+  "permissions": ["create", "read", "update", "delete"]
+}
+
+
+### Para obtener todos los roles:
+GET http://localhost:9000/api/roles/role
+
+
+### Para obtener un solo rol por su ID:
+GET http://localhost:9000/api/roles/role/644cb8b4fda6ec6dcae29ffd
+
+
+### Para actualizar un rol existente:
+PUT http://localhost:9000/api/roles/role/644cb8b4fda6ec6dcae29ffd
+Content-Type: application/json
+
+{
+  "name": "superadmin",
+  "permissions": ["create", "read", "update", "delete", "manage_roles"]
+}
+
+### Para eliminar un rol por su ID
+DELETE http://localhost:9000/api/roles/role/644cb8b4fda6ec6dcae29ffd

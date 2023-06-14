@@ -1,0 +1,56 @@
+### Registro de usuario
+
+POST http://localhost:9000/api/auth/user/signup
+Content-Type: application/json
+
+{
+  "username": "Soy el mejor",
+  "password": "Geo16*",
+  "email": "dreyco2525@gmail.cl",
+  "role": "superadmin",
+  "numero_telefonico":"48673673"
+}
+
+### Inicio de sesión
+
+POST http://localhost:9000/api/auth/user/login
+Content-Type: application/json
+
+{
+  "email": "dreyco2525@gmail.com",
+  "password": "Geo16*"
+}
+
+
+### todos los usuarios 
+
+GET http://localhost:9000/api/auth/users
+
+
+### activar usuarios 
+
+GET http://localhost:9000/api/auth/users/active/243434
+
+
+### Para actualizar un Usuario existente:
+PUT http://localhost:9000/api/auth/users/644cb8b4fda6ec6dcae29ffd
+Content-Type: application/json
+
+{
+  "name": "superadmin",
+  "permissions": ["create", "read", "update", "delete", "manage_roles"]
+}
+
+### Para eliminar un Usuario por su ID
+DELETE http://localhost:9000/api/auth/users/644cb8b4fda6ec6dcae29ffd
+
+
+
+### Eliminar varios interesados por su ID ###
+
+POST http://localhost:9000/api/auth/users/delete-multiple
+Content-Type: application/json
+
+{
+  "ids": ["id1", "id2", "id3"]
+}

@@ -1,0 +1,62 @@
+### Crear una propiedad:
+
+http
+Copy code
+POST http://localhost:9000/api/propiedades/propiedad
+Content-Type: application/json
+
+{
+  "titulo": "Propiedad 1",
+  "descripcion": "Descripción de la propiedad 1",
+  "tipo": "Casa",
+  "direccion": "Calle 123",
+  "ciudad": "Ciudad 1",
+  "estado": "Estado 1",
+  "precio": 100000,
+  "habitaciones": 3,
+  "banos": 2,
+  "agente_id": "644cb8b4fda6ec6dcae29ffd",
+  "zona_comun": "Piscina",
+  "cocina": "Cocina integral",
+  "ropas": "Zona de ropas",
+  "parqueadero": true,
+  "unidad": false,
+  "barrio": "Barrio 1",
+  "comuna": "Comuna 1",
+  "observaciones": "Observaciones de la propiedad 1"
+}
+
+### Obtener todas las propiedades:
+GET http://localhost:9000/api/propiedades/propiedad
+
+
+### Obtener una propiedad por su ID:
+GET http://localhost:9000/api/propiedades/propiedad/644cb8b4fda6ec6dcae29ffd
+
+### Actualizar una propiedad existente:
+PUT http://localhost:9000/api/propiedades/propiedad/644cb8b4fda6ec6dcae29ffd
+Content-Type: application/json
+
+{
+  "titulo": "Propiedad actualizada",
+  "descripcion": "Nueva descripción de la propiedad",
+  "tipo": "Apartamento",
+  "direccion": "Calle 456",
+  "ciudad": "Ciudad 2",
+  "estado": "Estado 2",
+  "precio": 150000,
+  "habitaciones": 2,
+  "banos": 1,
+  "agente_id": "a94cb8b4fda6ec6dcae29ffe",
+  "zona_comun": "Gimnasio",
+  "cocina": "Cocina abierta",
+  "ropas": "Zona de lavandería",
+  "parqueadero": false,
+  "unidad": true,
+  "barrio": "Barrio 2",
+  "comuna": "Comuna 2",
+  "observaciones": "Observaciones actualizadas"
+}
+
+### Eliminar una propiedad por su ID:
+DELETE http://localhost:9000/api/propiedades/propiedad/644cb8b4fda6ec6dcae29ffd

@@ -1,0 +1,38 @@
+### Crear un nuevo interesado ###
+POST http://localhost:9000/api/interesados/interesado
+Content-Type: application/json
+
+{
+  "nombre": "John Doe",
+  "email": "johndoe@example.com",
+  "telefono": "123456789"
+}
+
+### Obtener todos los interesados ###
+GET http://localhost:9000/api/interesados/interesado
+
+### Obtener un solo interesado por su ID ###
+GET http://localhost:9000/api/interesados/interesado/644cb8b4fda6ec6dcae29ffd
+
+### Actualizar un interesado existente ###
+PUT http://localhost:9000/api/interesados/interesado/647f647b1b915a7bf87db420
+Content-Type: application/json
+
+{
+  "nombre": "Jane Doe",
+  "email": "janedoe@example.com",
+  "telefono": "987654321"
+}
+
+### Eliminar un interesado por su ID ###
+DELETE http://localhost:9000/api/interesados/interesado/644cb8b4fda6ec6dcae29ffd
+
+
+### Eliminar varios interesados por su ID ###
+
+POST http://localhost:9000/api/interesados/interesado/delete-multiple
+Content-Type: application/json
+
+{
+  "ids": ["id1", "id2", "id3"]
+}

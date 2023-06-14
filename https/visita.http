@@ -1,0 +1,31 @@
+### Para crear una visita
+POST http://localhost:9000/api/visitas/visita
+Content-Type: application/json
+
+{
+  "id_inmueble": "644cb8b4fda6ec6dcae29ffd",
+  "interesado_id": "5f7c2c4b268a60544012d1a1",
+  "fecha_visita": "2023-06-01T09:00:00.000Z",
+  "comentarios": "Visita programada"
+}
+
+### Para obtener todas las visitas
+GET http://localhost:9000/api/visitas/visita
+
+### Para obtener una visita por su ID
+GET http://localhost:9000/api/visitas/visita/644cb8b4fda6ec6dcae29ffd
+
+### Para actualizar una visita
+PUT http://localhost:9000/api/visitas/visita/644cb8b4fda6ec6dcae29ffd
+Content-Type: application/json
+
+{
+  "id_inmueble": "644cb8b4fda6ec6dcae29ffd",
+  "interesado_id": "5f7c2c4b268a60544012d1a1",
+  "fecha_visita": "2023-06-01T10:00:00.000Z",
+  "comentarios": "Visita actualizada",
+  "realizada": true
+}
+
+### Para eliminar una visita por su ID
+DELETE http://localhost:9000/api/visitas/visita/644cb8b4fda6ec6dcae29ffd
