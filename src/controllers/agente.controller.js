@@ -106,36 +106,36 @@ exports.deleteAgente = async (req, res) => {
   }
 };
 
-exports.crearInfoImage = async  (req, res) => {
-  try {
-    const { id_usuario } = req.params;
-    console.log("llama la funcion ",req.files?.image)
-    if (req.files?.image) {
-      console.log("llama la funcion ",req.files?.image)
-      const result = await uploadImage(
-        req.files.image.tempFilePath,
-        id_usuario
-      );
-      console.log("result", result);
-      await fs.unlink(req.files.image.tempFilePath);
-      res.status(200).json({
-        mensaje: "Información de imagen creada exitosamente",
-        code: 200,
-        result: result,
-      });
-    } else {
-      res.status(400).json({
-        mensaje: "No se encontró ninguna imagen adjunta",
-      });
-    }
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({
-      mensaje: "No se pudo crear la información de la imagen",
-      error: error.message,
-    });
-  }
-}
+// exports.crearInfoImage = async  (req, res) => {
+//   try {
+//     const { id_usuario } = req.params;
+//     console.log("llama la funcion ",req.files?.image)
+//     if (req.files?.image) {
+//       console.log("llama la funcion ",req.files?.image)
+//       const result = await uploadImage(
+//         req.files.image.tempFilePath,
+//         id_usuario
+//       );
+//       console.log("result", result);
+//       await fs.unlink(req.files.image.tempFilePath);
+//       res.status(200).json({
+//         mensaje: "Información de imagen creada exitosamente",
+//         code: 200,
+//         result: result,
+//       });
+//     } else {
+//       res.status(400).json({
+//         mensaje: "No se encontró ninguna imagen adjunta",
+//       });
+//     }
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({
+//       mensaje: "No se pudo crear la información de la imagen",
+//       error: error.message,
+//     });
+//   }
+// }
 
 // exports.crearInfoImage = async (req, res) => {
 //   try {
@@ -174,3 +174,33 @@ exports.crearInfoImage = async  (req, res) => {
 //   }
 // };
 
+exports.crearInfoImage = async (req, res) => {
+  try {
+    const { id_usuario } = req.params;
+    console.log("llama la funcion ", req.file);
+    if (req.file) {
+      console.log("llama la funcion ", req.file);
+      const result = await uploadImage(
+        req.file.path,
+        id_usuario
+      );
+      console.log("result", result);
+      await fs.unlink(req.file.path);
+      res.status(200).json({
+        mensaje: "Información de imagen creada exitosamente",
+        code: 200,
+        result: result,
+      });
+    } else {
+      res.status(400).json({
+        mensaje: "No se encontró ninguna imagen adjunta",
+      });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      mensaje: "No se pudo crear la información de la imagen",
+      error: error.message,
+    });
+  }
+};
